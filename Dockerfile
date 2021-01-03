@@ -8,7 +8,7 @@ WORKDIR /var/www/gqame
 # add `/usr/src/app/node_modules/.bin` to $PATH
 ENV PATH /var/www/gqame/node_modules/.bin:$PATH
 # create user with no password
-RUN adduser --disabled-password chat
+RUN adduser --disabled-password gqame
 
 # Copy existing application directory contents
 COPY . /var/www/gqame
@@ -16,8 +16,8 @@ COPY . /var/www/gqame
 COPY package.json /var/www/gqame/package.json
 
 # grant a permission to the application
-RUN chown -R chat:chat /var/www/gqame
-USER chat
+RUN chown -R gqame:gqame /var/www/gqame
+USER gqame
 
 # clear application caching
 RUN npm cache clean --force
