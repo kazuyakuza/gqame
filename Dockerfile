@@ -16,7 +16,7 @@ COPY . /var/www/gqame
 COPY package.json /var/www/gqame/package.json
 
 # grant a permission to the application
-RUN chown -R gqame:gqame /var/www/gqame
+RUN sudo chown -R gqame:gqame /var/www/gqame
 USER gqame
 
 # clear application caching
