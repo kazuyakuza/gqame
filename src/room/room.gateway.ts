@@ -35,6 +35,7 @@ export class RoomGateway
     client.emit('leftRoom', room);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   afterInit(server: Server): void {
     return this.logger.log('Init');
   }
