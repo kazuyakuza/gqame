@@ -14,7 +14,6 @@ RUN adduser --disabled-password chat
 COPY . /var/www/gqame
 # install and cache app dependencies
 COPY package.json /var/www/gqame/package.json
-COPY package-lock.json /var/www/gqame/package-lock.json
 
 # grant a permission to the application
 RUN chown -R chat:chat /var/www/gqame
@@ -26,4 +25,4 @@ RUN npm cache clean --force
 RUN npm install
 
 EXPOSE 3004
-CMD [ "npm", "run", "start:dev" ]
+CMD [ "npm", "run", "start" ]
