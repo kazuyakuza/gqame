@@ -1,4 +1,4 @@
-version: '3.5'
+version: '3.7'
 # all the containers have to declare inside services
 services:
   # App service
@@ -35,7 +35,7 @@ services:
       - /var/www/gqame/node_modules
     # application network, each container for a service joins this network
     networks:
-      - gqame_network
+      - gqame-network
   # Redis service
   redis:
     # image name
@@ -58,12 +58,12 @@ services:
       - '${REDIS_PORT}:${REDIS_PORT}'
       # application network, each container for a service joins this network
     networks:
-      - gqame_network
+      - gqame-network
 
   #Docker Networks
 networks:
   # All container connect in a network
-  gqame_network:
+  gqame-network:
     driver: bridge
 # save (persist) data
 volumes:

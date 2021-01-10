@@ -17,18 +17,24 @@ https://redislabs.com/blog/redis-on-windows-10/
 4. Install Docker Engine on Ubuntu
 https://docs.docker.com/engine/install/ubuntu/
 
-5. Run next cmds
+5. Install docker-compose
 
 ```
-sudo apt install docker-compose
+sudo apt-get remove docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+```
+
+6. Run next cmds
+
+```
 sudo chmod -R 755 /var/www
 sudo chown -R $USER:$USER /var/www/gqame/
 sudo usermod -a -G docker <username>
 ```
 
 Then logout & login and check `groups` cmd return contains `docker` group
-
-6. 
 
 used links:
 
