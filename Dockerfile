@@ -1,5 +1,5 @@
 # Pull node image from docker hub
-FROM node:10-alpine
+FROM node:latest
 
 # create user with no password
 RUN adduser --disabled-password gqame
@@ -17,9 +17,9 @@ RUN sudo chown -Rh $USER:$USER /var/www/gqame
 ENV PATH /var/www/gqame/node_modules/.bin:$PATH
 
 # Copy existing application directory contents
-COPY . /var/www/gqame
+COPY --chown=gqame:gqame . /var/www/gqame
 # install and cache app dependencies
-COPY package.json /var/www/gqame/package.json
+COPY --chown=gqame:gqame package.json /var/www/gqame/package.json
 
 # clear application caching
 RUN npm cache clean --force
