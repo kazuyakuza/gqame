@@ -2,9 +2,9 @@
 FROM node:latest
 
 # create user with no password
-# RUN adduser --disabled-password gqame
+RUN adduser --disabled-password gqame
 
-USER node
+USER gqame
 
 # Set working directory
 RUN mkdir -p /var/www/gqame
@@ -28,4 +28,4 @@ RUN npm cache clean --force
 RUN npm install
 
 EXPOSE 3004
-CMD [ "npm", "run", "start" ]
+CMD [ "sudo", "npm", "run", "start" ]
