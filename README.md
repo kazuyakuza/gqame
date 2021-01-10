@@ -28,6 +28,8 @@ sudo usermod -a -G docker <username>
 
 Then logout & login and check `groups` cmd return contains `docker` group
 
+6. 
+
 used links:
 
 1. https://docs.nestjs.com/
