@@ -12,7 +12,6 @@ ENV PATH /var/www/gqame/node_modules/.bin:$PATH
 RUN adduser --disabled-password gqame
 
 USER gqame
-ENV USER=gqame
 
 # Copy existing application directory contents
 COPY --chown=$USER:$USER . /var/www/gqame
