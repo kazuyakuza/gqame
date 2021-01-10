@@ -4,14 +4,14 @@ FROM node:10-alpine
 # create user with no password
 RUN adduser --disabled-password gqame
 
-# grant a permission to the application
-RUN sudo chown -Rh gqame:gqame /var/www/gqame
-
 USER gqame
 
 # Set working directory
 RUN mkdir -p /var/www/gqame
 WORKDIR /var/www/gqame
+
+# grant a permission to the application
+RUN sudo chown -Rh $USER:$USER /var/www/gqame
 
 # add `/usr/src/app/node_modules/.bin` to $PATH
 ENV PATH /var/www/gqame/node_modules/.bin:$PATH
