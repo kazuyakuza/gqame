@@ -26,7 +26,7 @@ sudo chown -R $USER:$USER /var/www/gqame/
 sudo usermod -a -G docker <username>
 ```
 
-Then logout & login and check `groups` return contains `docker` group
+Then logout & login and check `groups` cmd return contains `docker` group
 
 used links:
 
